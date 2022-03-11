@@ -27,7 +27,7 @@ nav ul {
 
 nav a {
     color: #fff;
-    list-style-type: none;
+    text-decoration: none;
     text-align: center;
     display: block;
     padding: 10px;
