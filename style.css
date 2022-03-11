@@ -1,21 +1,64 @@
-*{
+* {
     font-family: verdana;
     margin: 0;
 }
 
-body{
+body {
     background: #eee;
 }
 
-.wrapper{
+.wrapper {
     width: 100%;
     max-width: 960px;
     margin: 0 auto;
 }
 
-/* menu base styles */
+/* MENU BASE STYLES */
+
+nav {
+    background: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+/*list-style-type: none - gets rid of the dot to the left of text (ul).*/
+
+nav a {
+    color: #fff;
+    list-style-type: none;
+    text-align: center;
+    display: block;
+    padding: 10px;
+}
+/*display: block - enables content take up full width by default.*/
+
+nav a:hover {
+    background-color: #555;
+}
 
 
+/* FLEX STYLES */
 
+@media screen and (min-width: 768px) {
 
-/* flex styles */
+    nav ul {
+        display: flex;
+    }
+    /*To enable the nav li become flex item, you have to make the nav ul a flex container,
+        and the above funtion serves that purpose.
+      Justify-content: XXX - justifies how the flex items will appear on the flex container;
+        center; centers flex item in flex container.
+        flex-start; default behaviour where flex items are to the start(left).
+        flex-end; opposite of flex-start (note: unlike float, it does not affect the order of contents).
+        space-around; spaces the flex item across container with space included at the beginning and end.
+        space-between; spaces the flex item across container with no space at the beginning and end. 
+    */
+
+    nav li {
+        flex: 1 1 0;
+    }
+
+}
+/*The above query states that only when the browser is > 768px will the flex properties take effect.*/
