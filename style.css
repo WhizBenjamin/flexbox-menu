@@ -38,8 +38,51 @@ nav a:hover {
     background-color: #555;
 }
 
+/* SOCIAL MENU BASE STYLES */
+
+a.tw {
+    background: url(img/tw.png) no-repeat center;
+    background-size: 80%;
+}
+
+a.fb {
+    background: url(img/fb.png) no-repeat center;
+    background-size: 80%;
+}
+/*background: url () - can be used to style a background with an image or video located at the url directory.*/
+
+.social a {
+    text-indent: -10000px;
+}
+
+.social {
+    max-width: 80px;
+    margin: 0 auto;
+}
+/*Setting the text-indent to such a low digit will make the background image equally shrink;
+    To correct that, set a flex property (under "nav ul.social") to let it expand to all the space available to it.
+  However, this only made the image even bigger as it grew into all available space;
+    Thus, we set a max-width to the .social class.
+  margin: 0 auto; - styles the website to have similar style for both mobile and desktop view;
+    This centralised the social container while in mobile view.
+*/
+
 
 /* FLEX STYLES */
+
+nav ul.social {
+    flex: 1 1 0;
+    display: flex;
+}
+
+nav ul.social li {
+    flex: 1 1 0;
+}
+/*display: flex - sets the social container to flex (ie tw and fb images aligned left to right),
+    Again though, images become too small/big and the flex property (under "nav ul.social li") is used to correct that.
+*/
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -60,5 +103,17 @@ nav a:hover {
         flex: 1 1 0;
     }
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    /*The style here will target the flex containers and not the flex items,
+        Thus, justify-content: space-between will create space between both flex containers.
+    */
+    
+    .social {
+        margin: 0;
+    }
+    /*margin: 0 - sets the tw and fb nests to sit to the far right*/
 }
 /*The above query states that only when the browser is > 768px will the flex properties take effect.*/
