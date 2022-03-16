@@ -4,6 +4,7 @@
     <title>CSS Flexbox - Nav Menu</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+    <!--jquery here is used to attach a funtionality for grid/stack layout-->
   </head>
   <body>
     <div class="wrapper">
@@ -21,6 +22,12 @@
           <li><a href="" class="tw">Twitter</a></li>
         </ul>
       </nav>
+
+      <div style="margin: 20px;">
+        <span>Layout: </span>
+        <a href="#" class="stack">Stack</a>
+        <a href="#" class="grid">Grid</a>
+      </div>
 
       <section id="blocks">
         <article>
@@ -50,5 +57,16 @@
       </section>
 
     </div>
+
+    <script>
+      $("a.stack").on("click", function(){
+        $("article").addClass("stack");
+      });
+      $("a.grid").on("click", function(){
+        $("article").removeClass("stack");
+      });
+    </script>
+    <!--When you click the stack anchor tag, it adds the class stack and when you click the grid anchor tag, it removes the class stack.-->
+
   </body>
 </html>

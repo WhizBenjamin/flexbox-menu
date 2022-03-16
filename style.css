@@ -147,10 +147,17 @@ nav ul.social li {
 
     article {
         flex: 0 1 32%;
+        transition: flex-basis 0.2s linear;
     }
     /*NOTE: 32% basis here incorporates 3 articles (3 x 32 = 96%) into the starting width.
             The justify-content: space-between; takes up the remaining 4% of width.
+            Setting the transition flex basis as such allows a 0.2secs delay in transition,
+                and it is linearly distributed thus results in animation.
     */
+
+    article.stack {
+        flex: 0 1 100%;
+    }
 
 }
 /*NOTE: The above query states that only when the browser is > 768px will the flex properties take effect.*/
